@@ -1,0 +1,29 @@
+.btn{
+    padding: 1%;
+    border:1px solid #000;
+    display:block;
+    width:15%;
+    margin-top:1%;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+/*Form*/
+
+.form{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    float:left;
+    background-color: #ffe87c;
+    margin-bottom: 10%;
+}
+.form input{
+    display: block;
+    padding-bottom: 1%;
+    margin: 1% auto;
+}

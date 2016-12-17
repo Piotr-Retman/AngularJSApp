@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/Screen.js"></script>
+    <script src="../js/MultiAnswers.js"></script>
+
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
+<body ng-controller="ScreenController as screen">
+<!--Form-->
+<div class="form">
+
+    <!--Welcome text-->
+    <h1>{{screen.welcomeText}}</h1>
+    <label for="firstName">First name</label>
+    <input name="firstName" id="firstName" ng-model="screen.name"/>
+
+    <label for="surname">Surname</label>
+    <input ng-model="screen.surname" id="surname"/>
+
+    <div ng-click="screen.displayName()" class="btn">Display upper data</div>
+</div>
+
+<!--Repeatable-->
+<div class="form">
+    <div ng-controller="MultiAnswerController as multi">
+
+        <label for="listMember">Add to list</label>
+        <input ng-model="multi.newMember" id="listMember"/>
+
+        <div ng-repeat="value in multi.parsingData">
+            <div ng-click="multi.removeFromDataList(value)">{{value}}</div>
+        </div>
+
+        <div ng-click="multi.addMember()" class="btn">Add new member</div>
+
+        <div>{{multi.error}}</div>
+    </div>
+</div>
+
+</body>
+</html>
